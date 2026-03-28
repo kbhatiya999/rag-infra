@@ -16,34 +16,26 @@ Local development infrastructure for RAG services (LiteLLM, Ollama, Jupyter).
 
 ## Getting Started
 
-1. **Install Dependencies**:
-   ```bash
-   brew bundle
-   # make sure to accept the xcode license if prompted: sudo xcodebuild -license accept
-   ```
+**The single-command bootstrap:**
+```bash
+# Fresh machine — nothing installed
+curl -fsSL https://mise.run | sh && mise run setup
+```
 
-2. **Initialize**:
-   ```bash
-   mise run init
-   ```
+Or if `mise` is already installed, just run:
+```bash
+mise run setup
+```
 
-2. **Configure Environment**:
-   ```bash
-   cp .env.example .env
-   # Edit .env and add your secrets (OPENAI_API_KEY, LITELLM_MASTER_KEY, JUPYTER_TOKEN)
-   ```
+This ensures `dotenvx` and `overmind` are installed, prompts you for credentials, encrypts them securely into `.env`, and configures the `data` folders.
 
-3. **Encrypt Secrets**:
-   ```bash
-   mise run encrypt
-   ```
-
-4. **Start Services**:
-   ```bash
-   mise run dev
-   ```
+Once done, simply start the RAG environment:
+```bash
+mise run dev
+```
 
 ## Tasks
+- `mise run setup`: One-time full setup — installs tools, creates data dirs, encrypts secrets.
 - `mise run dev`: Start all services via overmind.
 - `mise run encrypt`: Encrypt sensitive secrets in `.env`.
 - `mise run set KEY=X VALUE=Y`: Add or rotate a secret.
@@ -52,6 +44,6 @@ Local development infrastructure for RAG services (LiteLLM, Ollama, Jupyter).
 - `mise run init`: Create necessary data directories.
 
 ## Secret Management
-- Encrypted secrets: `OPENAI_API_KEY`, `LITELLM_MASTER_KEY`, `JUPYTER_TOKEN`.
+- Encrypted secrets: `GEMINI_API_KEY`, `LITELLM_MASTER_KEY`, `JUPYTER_TOKEN`.
 - plaintext config remains readable in `.env`.
 - `.env.keys` is gitignored and should be shared out-of-band.

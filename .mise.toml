@@ -1,7 +1,10 @@
 [tools]
 dotenvx = "latest"
 overmind = "latest"
-python = "3.11"
+
+[tasks.setup]
+run = "bash scripts/setup.sh"
+description = "One-time full setup — installs tools, creates data dirs, encrypts secrets"
 
 [tasks.dev]
 description = "Start all services via overmind"
