@@ -9,7 +9,7 @@ run = "dotenvx run -- overmind start"
 
 [tasks.encrypt]
 description = "Encrypt key secrets in .env"
-run = "dotenvx encrypt -K OPENAI_API_KEY -K LITELLM_MASTER_KEY -K JUPYTER_TOKEN"
+run = "dotenvx encrypt -K OPENAI_API_KEY -K GEMINI_API_KEY -K LITELLM_MASTER_KEY -K JUPYTER_TOKEN"
 
 [tasks.set]
 description = "Set a secret value"
@@ -17,7 +17,7 @@ run = "dotenvx set $KEY $VALUE"
 
 [tasks.secrets-check]
 description = "Verify decrypted secrets"
-run = "dotenvx run -- env | grep -E 'OPENAI|LITELLM_MASTER|JUPYTER_TOKEN'"
+run = "dotenvx run -- env | grep -E 'OPENAI|GEMINI_API|LITELLM_MASTER|JUPYTER_TOKEN'"
 
 [tasks.rotate]
 description = "Rotate encrypted secrets"
