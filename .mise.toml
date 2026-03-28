@@ -1,0 +1,28 @@
+[tools]
+# Add tools here if needed, e.g.,
+# python = "3.11"
+# node = "20"
+
+[tasks.dev]
+description = "Start all services via overmind"
+run = "dotenvx run -- overmind start"
+
+[tasks.encrypt]
+description = "Encrypt key secrets in .env"
+run = "dotenvx encrypt -K OPENAI_API_KEY -K LITELLM_MASTER_KEY -K JUPYTER_TOKEN"
+
+[tasks.set]
+description = "Set a secret value"
+run = "dotenvx set $KEY $VALUE"
+
+[tasks.secrets-check]
+description = "Verify decrypted secrets"
+run = "dotenvx run -- env | grep -E 'OPENAI|LITELLM_MASTER|JUPYTER_TOKEN'"
+
+[tasks.rotate]
+description = "Rotate encrypted secrets"
+run = "dotenvx rotate"
+
+[tasks.init]
+description = "Initialize data directories"
+run = "mkdir -p data/litellm data/ollama data/jupyter"

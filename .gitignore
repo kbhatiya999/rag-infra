@@ -1,0 +1,15 @@
+# Log files
+*.log
+
+# Data directories (gitignored as per rules)
+data/litellm/
+data/ollama/
+
+# System files
+.DS_Store
+
+# mise local overrides
+.mise.local.toml
+
+# dotenvx keys (never commit)
+.env.keys
