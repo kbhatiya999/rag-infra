@@ -9,7 +9,7 @@ run = "dotenvx run -- overmind start"
 
 [tasks.encrypt]
 description = "Encrypt key secrets in .env"
-run = "dotenvx encrypt -K GEMINI_API_KEY -K LITELLM_MASTER_KEY -K JUPYTER_TOKEN"
+run = "dotenvx encrypt -k GEMINI_API_KEY -k LITELLM_MASTER_KEY -k JUPYTER_TOKEN"
 
 [tasks.set]
 description = "Set a secret value"
