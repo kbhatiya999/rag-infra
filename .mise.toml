@@ -1,7 +1,7 @@
 [tools]
-# Add tools here if needed, e.g.,
-# python = "3.11"
-# node = "20"
+dotenvx = "latest"
+overmind = "latest"
+python = "3.11"
 
 [tasks.dev]
 description = "Start all services via overmind"
