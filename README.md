@@ -18,16 +18,16 @@ Local development infrastructure for RAG services (LiteLLM, Ollama, Jupyter).
 
 1. **Install Dependencies**:
    ```bash
-   brew bundle # Installs mise, overmind, and dotenvx
+   brew bundle
+   # make sure to accept the xcode license if prompted: sudo xcodebuild -license accept
    ```
 
 2. **Initialize**:
    ```bash
-   cd rag-infra
    mise run init
    ```
 
-3. **Configure Environment**:
+2. **Configure Environment**:
    ```bash
    cp .env.example .env
    # Edit .env and add your secrets (OPENAI_API_KEY, LITELLM_MASTER_KEY, JUPYTER_TOKEN)
