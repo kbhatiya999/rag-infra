@@ -1,5 +1,10 @@
-# Brewfile for rag-infra dependencies
+# Homebrew dependencies for rag-infra
+
+tap "dotenvx/brew"
+
 brew "mise"
 brew "overmind"
-brew "ollama"
 brew "dotenvx/brew/dotenvx"
+
+# Services (optional to manage via brew, but listed for completeness)
+# brew "ollama"
